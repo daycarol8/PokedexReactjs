@@ -1,0 +1,11 @@
+.pokemonListContainer{
+    display: grid;
+    grid-template-columns: 20rem 5rem;
+    
+}
+
+.pokemonListContainer > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

@@ -1,8 +1,21 @@
-.pokemonCardContainer{
-    height: 100%;
-
+.pokemonCardContainer{  
     display: flex;
     flex-direction: column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    border-radius: 5px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+
+    background: #FFFFFF;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    width: 18rem;
+    height: 10rem;
     
 }
 /*align-items: center;
