@@ -3,20 +3,20 @@ import { PokedexListContext } from '../contexts/PokedexListContext';
 import { useContext } from 'react';
 
 interface TypeButtonProps {
-    name: string;
+    pokType: string;
   }
 
-export function TypeButton({ name } : TypeButtonProps){
+export function TypeButton({ pokType } : TypeButtonProps){
 
     const { isClicked, buttonCancel, buttonIsClicked, buttonClicked } = useContext(PokedexListContext);
 
     return(
         <div>
             <div className={styles.TypesButtonContainer}>
-                {isClicked && name===buttonClicked? (
-                    <button className={`${styles.buttonType} ${styles.buttonActive}`} onClick={buttonCancel}><strong>{name}</strong></button>
+                {isClicked && pokType===buttonClicked? (
+                    <button className={`${styles.buttonType} ${styles.buttonActive}`} onClick={buttonCancel}><strong>{pokType}</strong></button>
                 ):(
-                    <button className={styles.buttonType} onClick={() => buttonIsClicked(name)}><strong>{name}</strong></button>
+                    <button className={styles.buttonType} onClick={() => buttonIsClicked(pokType)}><strong>{pokType}</strong></button>
                 )}
                 
             </div>

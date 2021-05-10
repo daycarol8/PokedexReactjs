@@ -4,6 +4,7 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 interface PokemonContextData {
     types: any[],
     isClicked: boolean,
+    actualType: string,
     buttonClicked: string,
     buttonIsClicked: (typeButtonClicked) => void,
     buttonCancel: () => void
@@ -21,7 +22,7 @@ export function PokedexListProvider({ children } : PokemonProviderProps){
 
     const [isClicked, setClicked] = useState(false);
 
-    const [buttonClicked, setBClicked] = useState('');
+    const [buttonClicked, setButtonClicked] = useState('');
 
     const [currentTypeUrl, setCurrentTypeUrl] = useState('https://pokeapi.co/api/v2/pokemon');
 
@@ -36,7 +37,7 @@ export function PokedexListProvider({ children } : PokemonProviderProps){
     function buttonIsClicked(typeButtonClicked){
         setClicked(true);
         setActualType(typeButtonClicked);
-        setBClicked(typeButtonClicked);
+        setButtonClicked(typeButtonClicked);
     }
 
     function buttonCancel(){
@@ -52,6 +53,7 @@ export function PokedexListProvider({ children } : PokemonProviderProps){
         <PokedexListContext.Provider value={{
             types,
             isClicked,
+            actualType,
             buttonClicked,
             buttonIsClicked,
             buttonCancel

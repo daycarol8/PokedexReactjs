@@ -1,5 +1,6 @@
 .typesButtonContainer{
     display: flex;
+    flex-direction: column;
 }
 
 .buttonType {

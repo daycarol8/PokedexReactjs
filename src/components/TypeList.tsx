@@ -11,7 +11,7 @@ export function TypeList(){
         <div className={styles.typeListContainer}>
             <div>
                 {types.map(p => (
-                    <TypeButton name={p}/>
+                    <TypeButton pokType={p}/>
                 ))}
             </div>
         </div>
