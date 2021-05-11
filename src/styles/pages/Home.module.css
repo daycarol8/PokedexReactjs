@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: column;
     background-color: #E6E5E4;
+    
+    font-family: "DejaVu Sans Mono", monospace;
 }
 
 .container section{

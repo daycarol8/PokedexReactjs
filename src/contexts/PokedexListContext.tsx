@@ -4,6 +4,7 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 interface PokemonContextData {
     types: any[],
     isClicked: boolean,
+    list: any[],
     actualType: string,
     buttonClicked: string,
     buttonIsClicked: (typeButtonClicked) => void,
@@ -44,14 +45,19 @@ export function PokedexListProvider({ children } : PokemonProviderProps){
         setClicked(false);
     }
 
-    function setListPokemon(actualType){
-        setCurrentTypeUrl(`https://pokeapi.co/api/v2/type/${actualType}`);
-    }
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+        axios.get(`https://pokeapi.co/api/v2/type/${actualType}`).then(res =>{
+        setList(res.data.pokemon.map(p => p.pokemon.name));
+    })
+    }, [actualType])
 
 
     return(
         <PokedexListContext.Provider value={{
             types,
+            list,
             isClicked,
             actualType,
             buttonClicked,

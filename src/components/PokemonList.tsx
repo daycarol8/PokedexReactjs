@@ -7,20 +7,12 @@ import styles from '../styles/components/PokemonList.module.css'
 
 export function PokemonList(){
     
-    const { actualType, isClicked } = useContext(PokedexListContext);
-
-    const [list, setList] = useState([]);
-
-    useEffect(() => {
-        axios.get(`https://pokeapi.co/api/v2/type/${actualType}`).then(res =>{
-        setList(res.data.pokemon.map(p => p.pokemon.name));
-    })
-    }, [actualType])
+    const { list } = useContext(PokedexListContext);
 
     return(
         <div className={styles.pokemonListContainer}>
             <div>
-                {list.map(p=> ( <PokemonCard type={p}/>))}
+                {list.map(p=> ( <PokemonCard key={p.id} type={p}/>))}
             </div>
             <div>
                 teste

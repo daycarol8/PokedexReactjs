@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/dom4": "^2.0.1",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0",
     "css-loader": "^5.2.4",
