@@ -15,7 +15,7 @@ export function PokemonList(){
                 {list.map(p=> ( <PokemonCard key={p.id} type={p}/>))}
             </div>
             <div>
-                teste
+
             </div>
         </div>
     );
