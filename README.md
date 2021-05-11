@@ -6,7 +6,7 @@ Foi utilizado o next.js e typescript, para a leitura da api foi usado o `useEfec
 
 Foi um pouco dificultoso no começo, mas depois de rever alguns conceitos, foi possível finalizar algumas funcionalidades.
 
-
+Para rodar localmente, baixe o repositório, abra uma linha de comando na pasta e utilize o comando `yarn dev` ou `npm run dev`
 
 Api utilizada: https://pokeapi.co/
 
